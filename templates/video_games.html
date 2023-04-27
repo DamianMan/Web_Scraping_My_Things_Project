@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="static/styles.css">
+
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700;800&display=swap" rel="stylesheet">
+
+    <title>Video Games</title>
+</head>
+<body>
+  <div class="container">
+
+      <div class="left-col">
+          <nav>
+             <img src="https://i.postimg.cc/JzKwwG16/arrow.png" class="back-btn">
+
+              <ul>
+                  <li><a href="{{ url_for('home') }}" class="active">Home</a></li>
+                  <li><a href="{{ url_for('nba') }}">Nba</a></li>
+                  <li><a href="{{ url_for('padel') }}">Padel</a></li>
+                  <li><a href="{{ url_for('video_games') }}">Video Games</a></li>
+              </ul>
+          </nav>
+      </div>
+
+      <section>
+          <header>
+             <svg  class="menu-btn" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M20 5V2H0V5H20ZM20 11V8H0V11H20ZM20 17V14H0V17H20Z" fill="white"/>
+  </svg>
+              <p class="logo">Video Games 🕹️</p>
+          </header>
+          <div class="cv">
+              <div class="content">
+                  <h1>TOP 10 MOST VIDEO GAMES PLAYED RIGHT NOW</h1>
+                    <div class="row">
+                      <div class="column">
+                        <table>
+                            <thead>
+                          <tr>
+                            <th><span style="color:var(--primary-color)">Game Title</span></th>
+                            <th><span style="color:var(--primary-color)">Players</span></th>
+
+                          </tr>
+                          </thead>
+                            <tbody>
+                          {% for game in video_games: %}
+                          <tr>
+                              <td>{{ game }}</td>
+                              <td>{{ video_games[game] }}</td>
+
+                          </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                      </div>
+                    </div>
+
+
+
+
+
+
+              </div>
+          </div>
+      </section>
+
+  </div>
+
+</body>
+</html>

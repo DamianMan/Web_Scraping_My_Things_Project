@@ -1,0 +1,33 @@
+<div class="container">
+
+    <div class="left-col">
+        <nav>
+           <img src="https://i.postimg.cc/JzKwwG16/arrow.png" class="back-btn">
+
+            <ul>
+                <li><a href="{{ url_for('home') }}" class="active">Home</a></li>
+                <li><a href="{{ url_for('nba') }}">Nba</a></li>
+                <li><a href="{{ url_for('padel') }}">Padel</a></li>
+                <li><a href="{{ url_for('video_games') }}">Video Games</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <section>
+        <header>
+           <svg  class="menu-btn" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M20 5V2H0V5H20ZM20 11V8H0V11H20ZM20 17V14H0V17H20Z" fill="white"/>
+</svg>
+            <p class="logo">My interests</p>
+        </header>
+        <div class="cv">
+            <div class="content">
+                <h1>Data of my what I'm interested in</h1>
+                <p>Built for fun.</p>
+
+                <a href="{{ url_for('nba') }}" class="cta">Let's see</a>
+            </div>
+        </div>
+    </section>
+
+</div>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="static/styles.css">
+
+
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700;800&display=swap" rel="stylesheet">
+
+    <title>NBA</title>
+</head>
+<body>
+  <div class="container">
+
+    <div class="left-col">
+        <nav>
+           <img src="https://i.postimg.cc/JzKwwG16/arrow.png" class="back-btn">
+
+            <ul>
+                <li><a href="{{ url_for('home') }}" class="active">Home</a></li>
+                <li><a href="{{ url_for('nba') }}">Nba</a></li>
+                <li><a href="{{ url_for('padel') }}">Padel</a></li>
+                <li><a href="{{ url_for('video_games') }}">Video Games</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <section>
+        <header>
+           <svg  class="menu-btn" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20 5V2H0V5H20ZM20 11V8H0V11H20ZM20 17V14H0V17H20Z" fill="white"/>
+            </svg>
+            <p class="logo">NBA 🏀</p>
+        </header>
+        <div class="cv">
+            <div class="content">
+                <h1>NBA Yesyerday Stats Leader</h1>
+                <div class="row">
+                    <div class="column">
+                        <table>
+                          <thead>
+                            <tr>
+                              <th scope="col"></th>
+                              <th scope="col" style="text-decoration: underline; color:var(--primary-color)">POINTS</th>
+
+                            </tr>
+                          </thead>
+                          <tbody>
+                          {% for player in points: %}
+                            <tr>
+                              <td><span>{{ player }}</span></td>
+                              <td><span>{{ points[player] }}</span></td>
+
+                            </tr>
+                          {% endfor %}
+                          </tbody>
+                        </table>
+                    </div>
+                    <div class="column" style="margin: 0 10%;">
+                        <table>
+                          <thead>
+                            <tr>
+                              <th scope="col"></th>
+                              <th scope="col" style="text-decoration: underline; color:var(--primary-color)">REBOUNDS</th>
+
+                            </tr>
+                          </thead>
+                          <tbody>
+                          {% for reb in rebounds: %}
+                            <tr>
+                              <td><span>{{ reb }}</span></td>
+                              <td><span>{{ rebounds[reb] }}</span></td>
+
+                            </tr>
+                          {% endfor %}
+                          </tbody>
+                        </table>
+                    </div>
+                    <div class="column">
+                        <table>
+                          <thead>
+                            <tr>
+                              <th scope="col"></th>
+                              <th scope="col" style="text-decoration: underline; color:var(--primary-color)">THREE POINTS</th>
+
+                            </tr>
+                          </thead>
+                          <tbody>
+                          {% for three in three_points: %}
+                            <tr>
+                              <td><span>{{ three }}</span></td>
+                              <td><span>{{ three_points[three] }}</span></td>
+
+                            </tr>
+                          {% endfor %}
+                          </tbody>
+                        </table>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
+</div>
+</body>
+</html>
